@@ -1,0 +1,200 @@
+# Embedded Server configuration
+server:
+    port: 8000
+    servlet:
+        context-path: /api-tbs-switching-bridge-orchestrator-microservice/v1
+    compression:
+        enabled: true
+    tomcat:
+        uri-encoding: UTF-8
+    error:
+        include-stacktrace: never
+
+# Spring configuration
+spring:
+    application:
+        name: novo-microservice-template
+        version: 1.0.0
+        log: /logs
+    messages:
+        encoding: UTF-8
+    version: 2.7.1
+    main:
+        banner-mode: log
+        lazy-initialization: true
+    mvc:
+        converters:
+            preferred-json-mapper: jsonb
+    jpa:
+        open-in-view: false        # Get Rid of OIV Warning
+        show-sql: false
+    data:
+        mongodb:
+            uri: mongodb://mongodb:novo.123@mongodb-0.mongodb-svc.resources.svc.cluster.local:27017/microservices-mongo-databases?authSource=admin&ssl=false&directConnection=true&replicaSet=mongodb&readPreference=primary
+            database: microservices-mongo-databases
+
+# Logger Configuration
+logging:
+    level:
+        root: INFO
+
+# Health Configuration
+management:
+    endpoint:
+        health:
+            probes:
+                enabled: true
+    health:
+        db:
+            enabled: false
+        livenessState:
+            enabled: true
+        readinessState:
+            enabled: true
+
+# Pod Configuration
+entityUuid: 815d4976-42a4-4aa7-8ec3-bd3ccc4d5456
+configurationDomainPath: https://d-core-multitenant.novopayment.net
+hazelcastYmlPath: /hazelcast.yml
+configMap.message: Archivo [ application.properties ] local. No se ha cargado el archivo configMap desde Kubernetes.
+coreTenantConnectTimeout: 9500
+coreTenantReadTimeout: 9500
+novo-microservices-index-control: "00"
+jweJsonConfigDecryptPrivateKey: MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDcTOoG6P8vBwgXowY3ZK5SD7N6RYYvYOHap+yO2TOXGO8ub74w2gFYqBR6T8UjZjzQUpB/OTNlfSuRotYbagSsttGjEUDI2VU3waOH74txa23r11PcDpr/mZ+AYg/KFpZx7buMH0AIEpArf7u9y/i0w9oyknDSuB6CUr5uJSdTWH/s+gpQnxM90ivtwagHe5M9qijXpGWxDo9oxvcRMbMdJQCS1ylr+AD4F0pTcQ2d/4/1FJA3dTfyBoiVFuNVMBnm3tbDaGPw61cP6Rln9iFzhfLAjqrlwz2GYVFcE/X0uAT2wCYxiftsc5RZq7WHzqf5KF1Hyo4xsq81p4JXuMChAgMBAAECggEBANstfsz/NRvhwBBcNswX1EN6sZMd5qHunuY/meCJgoV63kRyEmRiEWLWXwFNqhJNHoYZDwA0tcjsXtOXkbNWqG35udqmSLFLYTiG5B9TmYVvX757zkgrE9TnT8SYS6NBE88nuidv0/H0HhHZFL2BWODn1ofoIG3Vly0MC8BkIJsOoi96opW2YatdEC0WV2+5pDpd0G1rGlhugsbXZ5YbkZpjVftv0+pcPuUMoaNgo7k8ZvqDFHbeozgpM8p3G9h1THJuVFyewU06cCOsc/6HW1bUqQAssMDkK/ODFgFXXWHIZlhTb4+L5KRoDZGDc6QjwkGv7Gzzn1Y2y2/LWpmgMxECgYEA74BhQVPtLKczbRJmHwjlN+St/Q8rckiZIlzauveMQ/+5omTgokF+cOz2a80/0oGq9IuQZxT2VJm+NFS9bVNmzpWIuVvhwgy6IMEo0RRYhh/WXShcR7KNKbVz5/ieGQ3feXSNaebBCGKDEToePJ6hRaG8aeohSDxALf5DIhrZniUCgYEA63nsTI59lSbxv0jDVHw3skMIkx+p1jv5tOgLYjCuPdxk2FMS/danXl84ut/PhusQZXhvgkuGJ7VpC9uDZT5qA3knIX7l6uoySFUV7hE55cJRfl8nfxrtkKagWaGJPWIzOFRGN79kLMO6fN/bmWHS60UW7KcNsUs69U/RW5rdmc0CgYAY1tq/WMH3aJvnywm2XEjRpDD7VvBtmOPw8WpqC7SLdOE+23GEwoAnnBvukEn3PiWJ2VOvrTfjDFLywHso9IZsFIwqlUHzyzgen4npLVAFERY9cSso8Ha9hakwvNNAy/SKdzEXc6w/f2ASkFGEfftB6oVNAtBS2pTZcE5sIhbB1QKBgGoUnxNODd0nkjiuOvDQlPbFpBNDbGuK0U9iSd6ON7C+nN+nbSLVlMi69P+a3A7XzqcnvnRgOauh2hTxaxwtJe0yoyI/3KwbnVNgoWSCdia/h576lvx30RYdOpemYgE5QAHcVVW/7w0Lj/O5lWBf5Xj/wvgRueVpEsJ4lsRB3BrxAoGBAOMEIdjywMPV4OCLJifpsogAtGIFMrxW/gez34z3x198H/8b7kPCimvmbtCa1Ytn+lkO8Jb8oNdrYmWVoO/oP0eBFPpcCochmCPuVMzwnG7nVGsuobinCQ2c9FA05ezGBjCuTzPxQNmf3d9YlfTEJjOEmLuSWx2tveCYQ2Po4dKD
+coreMultitenancyRepositoryEnable: true
+novo-http-utils-connect-timeout: 1600
+novo-http-utils-read-timeout: 1600
+microservice:
+    datasource:
+        name: microservice.datasource.tbs.solutions
+        encryption-enable: true
+    configuration:
+        type: microservice.configuration.type.json.api
+    mongo:
+        database:
+            enable-auto-create: true
+            databaseId: tbs-yastas-orchestrator-microservice
+    jobs:
+        load-init-tenants-configurations-job:
+            enabled: false
+            cron: "0 0 0/23 ? * *" # corre cada 24 horas
+        load-reload-configurations-job:
+            enabled: false
+            cron: "0 0/120 * ? * *" # corre cada 120 min
+        load-init-data-sources-job:
+            enabled: false
+            cron: "0 0/120 * ? * *" # corre cada 120 min
+
+rabbit:
+    host: ${ENV_RABBIT_HOST_DEV:d.rabbitmq.novopayment.net}
+    port: ${ENV_RABBIT_PORT_DEV:5672}
+    username: ${ENV_RABBIT_USER_NAME_DEV:rabbit}
+    password: ${ENV_RABBIT_PASSWORD_DEV:rabbit}
+    virtualhost: "/"
+    publisher-returns: true
+    publisher-confirm-type: CORRELATED
+
+orchestrator:
+    encryption-key: ${ENV_ENCRYPTION_KEY:mzH9GuGydbYx7akrGf9GYVU5YCYoYUU4}
+
+broker-transactions:
+    common-configuration:
+        routing-domain: TRANSACTION
+        routing-key-origin: SWITCHING-BRIDGE-ORCHESTRATOR
+    orchestrator-transaction-response-consumer:
+        queue: QU_ORCHESTRATION_RESPONSE_TRANSACTION_${entityUuid}
+        command: REQUEST
+        routing-key: SERVICE.API-ISO-RECEIVER.*.TRANSACTION.RESPONSE
+        routing-domain: "*"
+        routing-key-origin: API-TBS-CUSTOMER-VALIDATION-MICROSERVICE
+        routing-key-destiny: API-TBS-CUSTOMER-VALIDATION-MICROSERVICE
+    customer-information-transaction-producer:
+        command: REQUEST
+        routing-key: SERVICE.SWITCHING-BRIDGE-ORCHESTRATOR.CUSTOMER-INFORMATION.TRANSACTION.REQUEST
+        routing-domain: TRANSACTION
+        routing-key-origin: SWITCHING-BRIDGE-ORCHESTRATOR
+        routing-key-destiny: CUSTOMER-INFORMATION
+    cash-deposit-transaction-producer:
+        command: REQUEST
+        routing-key: SERVICE.SWITCHING-BRIDGE-ORCHESTRATOR.CASH-DEPOSIT.TRANSACTION.REQUEST
+        routing-domain: TRANSACTION
+        routing-key-origin: SWITCHING-BRIDGE-ORCHESTRATOR
+        routing-key-destiny: CASH-DEPOSIT
+    reverse-cash-deposit-transaction-producer:
+        command: REQUEST
+        routing-key: SERVICE.SWITCHING-BRIDGE-ORCHESTRATOR.REVERSE-CASH-DEPOSIT.TRANSACTION.REQUEST
+        routing-domain: TRANSACTION
+        routing-key-origin: SWITCHING-BRIDGE-ORCHESTRATOR
+        routing-key-destiny: REVERSE-CASH-DEPOSIT
+    commission-query-transaction-producer:
+        command: REQUEST
+        routing-key: SERVICE.SWITCHING-BRIDGE-ORCHESTRATOR.COMMISSION-QUERY.TRANSACTION.REQUEST
+        routing-domain: TRANSACTION
+        routing-key-origin: SWITCHING-BRIDGE-ORCHESTRATOR
+        routing-key-destiny: COMMISSION-QUERY
+    reverse-card-replacement-transaction-producer:
+        command: REQUEST
+        routing-key: SERVICE.SWITCHING-BRIDGE-ORCHESTRATOR.REVERSE-CARD-REPLACEMENT.TRANSACTION.REQUEST
+        routing-domain: TRANSACTION
+        routing-key-origin: SWITCHING-BRIDGE-ORCHESTRATOR
+        routing-key-destiny: REVERSE-CARD-REPLACEMENT
+    cash-withdraw-transaction-producer:
+        command: REQUEST
+        routing-key: SERVICE.SWITCHING-BRIDGE-ORCHESTRATOR.CASH-WITHDRAW.TRANSACTION.REQUEST
+        routing-domain: TRANSACTION
+        routing-key-origin: SWITCHING-BRIDGE-ORCHESTRATOR
+        routing-key-destiny: CASH-WITHDRAW
+    mobile-cash-withdraw-transaction-producer:
+        command: REQUEST
+        routing-key: SERVICE.SWITCHING-BRIDGE-ORCHESTRATOR.MOBILE-CASH-WITHDRAW.TRANSACTION.REQUEST
+        routing-domain: TRANSACTION
+        routing-key-origin: SWITCHING-BRIDGE-ORCHESTRATOR
+        routing-key-destiny: MOBILE-CASH-WITHDRAW
+    change-pin-transaction-producer:
+        command: REQUEST
+        routing-key: SERVICE.SWITCHING-BRIDGE-ORCHESTRATOR.CHANGE-PIN.TRANSACTION.REQUEST
+        routing-domain: TRANSACTION
+        routing-key-origin: SWITCHING-BRIDGE-ORCHESTRATOR
+        routing-key-destiny: CHANGE-PIN
+    replace-card-transaction-producer:
+        command: REQUEST
+        routing-key: SERVICE.SWITCHING-BRIDGE-ORCHESTRATOR.REPLACE-CARD.TRANSACTION.REQUEST
+        routing-domain: TRANSACTION
+        routing-key-origin: SWITCHING-BRIDGE-ORCHESTRATOR
+        routing-key-destiny: REPLACE-CARD
+    cash-init-deposit-transaction-producer:
+        command: REQUEST
+        routing-key: SERVICE.SWITCHING-BRIDGE-ORCHESTRATOR.INIT-DEPOSIT.TRANSACTION.REQUEST
+        routing-domain: TRANSACTION
+        routing-key-origin: SWITCHING-BRIDGE-ORCHESTRATOR
+        routing-key-destiny: INIT-DEPOSIT
+    reverse-init-deposit-transaction-producer:
+        command: REQUEST
+        routing-key: SERVICE.SWITCHING-BRIDGE-ORCHESTRATOR.REVERSE-INIT-DEPOSIT.TRANSACTION.REQUEST
+        routing-domain: TRANSACTION
+        routing-key-origin: SWITCHING-BRIDGE-ORCHESTRATOR
+        routing-key-destiny: REVERSE-INIT-DEPOSIT
+    reverse-cash-withdraw-transaction-producer:
+        command: REQUEST
+        routing-key: SERVICE.SWITCHING-BRIDGE-ORCHESTRATOR.REVERSE-CASH-WITHDRAW.TRANSACTION.REQUEST
+        routing-domain: TRANSACTION
+        routing-key-origin: SWITCHING-BRIDGE-ORCHESTRATOR
+        routing-key-destiny: REVERSE-CASH-WITHDRAW
+    reverse-withdraw-mobile-money-transaction-producer:
+        command: REQUEST
+        routing-key: SERVICE.SWITCHING-BRIDGE-ORCHESTRATOR.REVERSE-WITHDRAW-MOBILE-MONEY.TRANSACTION.REQUEST
+        routing-domain: TRANSACTION
+        routing-key-origin: SWITCHING-BRIDGE-ORCHESTRATOR
+        routing-key-destiny: REVERSE-WITHDRAW-MOBILE-MONEY
+    check-balance-transaction-producer:
+        command: REQUEST
+        routing-key: SERVICE.SWITCHING-BRIDGE-ORCHESTRATOR.CHECK-BALANCE.TRANSACTION.REQUEST
+        routing-domain: TRANSACTION
+        routing-key-origin: SWITCHING-BRIDGE-ORCHESTRATOR
+        routing-key-destiny: CHECK-BALANCE
+    reverse-check-balance-transaction-producer:
+        command: REQUEST
+        routing-key: SERVICE.SWITCHING-BRIDGE-ORCHESTRATOR.REVERSE-CHECK-BALANCE.TRANSACTION.REQUEST
+        routing-domain: TRANSACTION
+        routing-key-origin: SWITCHING-BRIDGE-ORCHESTRATOR
+        routing-key-destiny: REVERSE-CHECK-BALANCE

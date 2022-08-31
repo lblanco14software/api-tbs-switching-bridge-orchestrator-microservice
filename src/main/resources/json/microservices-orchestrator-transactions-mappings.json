@@ -1,0 +1,217 @@
+[
+  {
+    "standardTransactionRequest": {
+      "dataElement_25": "00",
+      "dataElement_26": "04",
+      "dataElement_123": "660050100001119"
+    }
+  },
+  {
+    "transactionCode": "orchestrator.customer.info.transaction",
+    "serviceId": "00660035",
+    "messageTypeIndicator": "0200",
+    "processingCode": "380000",
+    "transactionStateCode": "CUSTOMER_INFO_TRANSACTION",
+    "transactionReferenceCode": "ConsultaDatosCliente",
+    "standardTransactionRequest": {
+      "dataElement_3": "320000",
+      "dataElement_127_33": "7003"
+    }
+  },
+  {
+    "transactionCode": "orchestrator.commission.query.transaction",
+    "serviceId": "00660037",
+    "messageTypeIndicator": "0200",
+    "processingCode": "330000",
+    "transactionStateCode": "COMMISSION_QUERY_TRANSACTION",
+    "transactionReferenceCode": "ConsultarComisionDeposito",
+    "standardTransactionRequest": {
+      "dataElement_3": "890000"
+    }
+  },
+  {
+    "transactionCode": "orchestrator.cash.deposit.transaction",
+    "serviceId": "00660022",
+    "messageTypeIndicator": "0200",
+    "processingCode": "210000",
+    "transactionStateCode": "CASH_DEPOSIT_TRANSACTION",
+    "transactionReferenceCode": "DepositoEfectivo",
+    "standardTransactionRequest": {}
+  },
+  {
+    "transactionCode": "orchestrator.reverse.cash.deposit.transaction",
+    "serviceId": "00660022",
+    "messageTypeIndicator": "0420",
+    "processingCode": "210000",
+    "transactionStateCode": "REVERSE_DEPOSIT_CASH_TRANSACTION",
+    "transactionReferenceCode": "ReversoDepositoEfectivo",
+    "standardTransactionRequest": {}
+  },
+  {
+    "transactionCode": "orchestrator.commission.withdrawal.query.transaction",
+    "serviceId": "00660036",
+    "messageTypeIndicator": "0200",
+    "processingCode": "320000",
+    "transactionStateCode": "COMMISSION_WITHDRAWAL_QUERY_TRANSACTION",
+    "transactionReferenceCode": "ConsultaComisionRetiro",
+    "standardTransactionRequest": {
+      "dataElement_3": "890000"
+    }
+  },
+  {
+    "transactionCode": "orchestrator.cash.withdraw.transaction",
+    "serviceId": "00660024",
+    "messageTypeIndicator": "0200",
+    "processingCode": "010000",
+    "transactionStateCode": "WITHDRAW_CASH_TRANSACTION",
+    "transactionReferenceCode": "RetiroEfectivo",
+    "standardTransactionRequest": {}
+  },
+  {
+    "transactionCode": "orchestrator.reverse.withdraw.cash.transaction",
+    "serviceId": "00660024",
+    "messageTypeIndicator": "0420",
+    "processingCode": "010000",
+    "transactionStateCode": "REVERSE_WITHDRAW_CASH_TRANSACTION",
+    "transactionReferenceCode": "ReversoRetiroEfectivo",
+    "standardTransactionRequest": {}
+  },
+  {
+    "transactionCode": "orchestrator.change.ping.transaction",
+    "serviceId": "00660018",
+    "messageTypeIndicator": "0200",
+    "processingCode": "960000",
+    "transactionStateCode": "CHANGE_PING_TRANSACTION",
+    "transactionReferenceCode": "CambioNIP",
+    "standardTransactionRequest": {
+      "messageTypeIndicator": "0600",
+      "dataElement_3": "920000"
+    },
+    "standardTransactionResponse": {
+      "messageTypeIndicator": "0210"
+    }
+  },
+  {
+    "transactionCode": "orchestrator.cash.init.deposit.transaction",
+    "serviceId": "00660019",
+    "messageTypeIndicator": "0200",
+    "processingCode": "250000",
+    "transactionStateCode": "CASH_INIT_DEPOSIT_TRANSACTION",
+    "transactionReferenceCode": "DepositoInicial",
+    "standardTransactionRequest": {
+      "dataElement_127_33": "9001"
+    }
+  },
+  {
+    "transactionCode": "orchestrator.reverse.init.deposit.cash.transaction",
+    "serviceId": "00660019",
+    "messageTypeIndicator": "0420",
+    "processingCode": "250000",
+    "transactionStateCode": "REVERSE_INIT_DEPOSIT_CASH_TRANSACTION",
+    "transactionReferenceCode": "ReversoDepositoInicial",
+    "standardTransactionRequest": {
+      "dataElement_127_33": "9001"
+    }
+  },
+  {
+    "transactionCode": "orchestrator.commission.balance.query.transaction",
+    "serviceId": "00660035",
+    "messageTypeIndicator": "0200",
+    "processingCode": "210049",
+    "transactionStateCode": "COMMISSION_BALANCE_QUERY_TRANSACTION",
+    "transactionReferenceCode": "ConsultaComisionSaldo",
+    "standardTransactionRequest": {
+      "dataElement_3": "890000"
+    }
+  },
+  {
+    "transactionCode": "orchestrator.check.balance.transaction",
+    "serviceId": "00660021",
+    "messageTypeIndicator": "0200",
+    "processingCode": "310000",
+    "transactionStateCode": "CHECK_BALANCE_TRANSACTION",
+    "transactionReferenceCode": "ConsultaSaldo",
+    "standardTransactionRequest": {}
+  },
+  {
+    "transactionCode": "orchestrator.reverse.balance.inquiry.transaction",
+    "serviceId": "00660021",
+    "messageTypeIndicator": "0420",
+    "processingCode": "310000",
+    "transactionStateCode": "REVERSE_BALANCE_INQUIRY_TRANSACTION",
+    "transactionReferenceCode": "ReversoConsultaSaldo",
+    "standardTransactionRequest": {}
+  },
+  {
+    "transactionCode": "orchestrator.replace.card.transaction",
+    "serviceId": "00660020",
+    "messageTypeIndicator": "0200",
+    "processingCode": "230000",
+    "transactionStateCode": "REPLACE_CARD_TRANSACTION",
+    "transactionReferenceCode": "ReposicionTarjeta",
+    "standardTransactionRequest": {
+      "messageTypeIndicator": "0600",
+      "dataElement_3": "910000",
+      "dataElement_127_33": "3303"
+    },
+    "standardTransactionResponse": {
+      "messageTypeIndicator": "0210"
+    }
+  },
+  {
+    "transactionCode": "orchestrator.reverse.card.replacement.transaction",
+    "serviceId": "00660020",
+    "messageTypeIndicator": "0420",
+    "processingCode": "230000",
+    "transactionStateCode": "REVERSE_CARD_REPLACEMENT_TRANSACTION",
+    "transactionReferenceCode": "ReversoReposicionTarjeta",
+    "standardTransactionRequest": {
+      "dataElement_3": "910000",
+      "dataElement_127_33": "3303"
+    }
+  },
+  {
+    "transactionCode": "orchestrator.mobile.cash.withdraw.transaction",
+    "serviceId": "00660023",
+    "messageTypeIndicator": "0200",
+    "processingCode": "170000",
+    "transactionStateCode": "WITHDRAW_MOBILE_MONEY_TRANSACTION",
+    "transactionReferenceCode": "DineroMovil",
+    "standardTransactionRequest": {
+      "dataElement_3": "010000",
+      "dataElement_127_33": "9000"
+    }
+  },
+  {
+    "transactionCode": "orchestrator.reverse.withdraw.mobile.money.transaction",
+    "serviceId": "00660023",
+    "messageTypeIndicator": "0420",
+    "processingCode": "170000",
+    "transactionStateCode": "REVERSE_WITHDRAW_MOBILE_MONEY_TRANSACTION",
+    "transactionReferenceCode": "ReversoDineroMovil",
+    "standardTransactionRequest": {
+      "dataElement_3": "010000",
+      "dataElement_127_33": "9000"
+    }
+  },
+  {
+    "transactionCode": "orchestrator.hsm.generate.key",
+    "serviceId": "00110011",
+    "messageTypeIndicator": "1111",
+    "processingCode": "000000",
+    "transactionStateCode": "HSM_GENERATE_KEY",
+    "transactionReferenceCode": "HsmGenerateKey",
+    "standardTransactionRequest": {}
+  },
+  {
+    "transactionCode": "orchestrator.commission.replace.card.query.transaction",
+    "serviceId": "00660039",
+    "messageTypeIndicator": "0200",
+    "processingCode": "340000",
+    "transactionStateCode": "COMMISSION_REPLACE_CARD_QUERY_TRANSACTION",
+    "transactionReferenceCode": "ConsultaComisionReposicionTarjeta",
+    "standardTransactionRequest": {
+      "dataElement_3": "890000"
+    }
+  }
+]

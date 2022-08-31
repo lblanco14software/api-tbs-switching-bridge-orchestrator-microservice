@@ -1,0 +1,10 @@
+---
+hazelcast:
+    network:
+        join:
+            multicast:
+                enabled: false
+            kubernetes:
+                enabled: false
+                namespace: novo-dev
+                service-name: service-name-k8s-svc

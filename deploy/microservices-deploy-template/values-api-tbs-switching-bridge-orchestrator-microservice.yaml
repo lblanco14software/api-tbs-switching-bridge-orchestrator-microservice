@@ -1,0 +1,90 @@
+# Default values for novo-microservices-helm-template.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+service:
+  type: ClusterIP
+  port: 8000
+  protocol: TCP
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 80
+
+deploymentEnviroments:
+    dev:
+        namespace: dev-api-backend
+        coreMultitenantHost: https://d-core-multitenant.novopayment.net
+        persistentVolumeLogClaimName: dev-microservices-logs
+        appHost: d-${artifactId}.novopayment.net
+        imageContainer: novopayment/${artifactId}:dev-${version}
+        priorityClassName: low-priority
+        cpu: 700m
+        memory: 1024Mi
+        requestCpu: 20m
+        requestMemory: 256Mi
+    test:
+        namespace: test-api-backend
+        coreMultitenantHost: https://t-core-multitenant.novopayment.net
+        persistentVolumeLogClaimName: test-api-tokenization-services-itsp-logs
+        appHost: t-${artifactId}.novopayment.net
+        imageContainer: novopayment/${artifactId}:test-${version}
+        priorityClassName: medium-priority
+        cpu: 700m
+        memory: 1024Mi
+        requestCpu: 20m
+        requestMemory: 256Mi
+    uat:
+        namespace: uat-api-backend
+        coreMultitenantHost: https://uat-core-multitenant.novopayment.net
+        persistentVolumeLogClaimName: uat-api-tokenization-services-itsp-logs
+        appHost: uat-${artifactId}.novopayment.net
+        imageContainer: novopayment/${artifactId}:uat-${version}
+        priorityClassName: high-priority
+        cpu: 700m
+        memory: 1024Mi
+        requestCpu: 20m
+        requestMemory: 256Mi
+    prod:
+        namespace: api-backend
+        coreMultitenantHost: https://core-multitenant.novopayment.net
+        persistentVolumeLogClaimName: api-tokenization-services-itsp-logs
+        appHost: ${artifactId}.novopayment.net
+        imageContainer: novopayment/${artifactId}:prod-${version}
+        priorityClassName: high-priority
+        cpu: 800m
+        memory: 3096Mi
+        requestCpu: 20m
+        requestMemory: 256Mi
+
+novo:
+  microservices:
+      appName: ${artifactId}
+    appPort: 8000
+    appContext: /${artifactId}/v1
+      appHealthCheckContext: /${artifactId}/actuator/health
+  kubernetes:
+    deploymentEnviroment: dev
+    deploymentHost: docker.novopayment.net/
+    resources:
+      services:
+        type: ClusterIP
+        port: 8000
+        protocol: TCP
+  deployment:
+    imagePullSecrets: reg-cicd-user
+  volumeMounts:
+      appConfigVolume:
+      mountPath: application.properties
+      subPath: application.properties
+      readOnly: true
+      appCacheConfigVolume:
+          mountPath: hazelcast.yml
+          subPath: hazelcast.yml
+          readOnly: true
+    appLogConfigVolume:
+      mountPath: /logs

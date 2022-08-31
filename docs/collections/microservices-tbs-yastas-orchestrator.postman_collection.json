@@ -1,0 +1,579 @@
+{
+	"info": {
+		"_postman_id": "fa8b3dda-524a-4026-bb1a-5b953f486884",
+		"name": "Microservices TBS Yastas Orchestrator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Core Multitenant",
+			"item": [
+				{
+					"name": "Get Tenant Configuration API",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{microservices-core-multitetant-host}}/configurations/v1/components/815d4976-42a4-4aa7-8ec3-bd3ccc4d5456/tenants/mx-yastas/configurations",
+							"host": [
+								"{{microservices-core-multitetant-host}}"
+							],
+							"path": [
+								"configurations",
+								"v1",
+								"components",
+								"815d4976-42a4-4aa7-8ec3-bd3ccc4d5456",
+								"tenants",
+								"mx-yastas",
+								"configurations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tenant Configuration Files",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{microservices-core-multitetant-host}}/configurations/v1/components/815d4976-42a4-4aa7-8ec3-bd3ccc4d5456/tenants/mx-yastas/configurations/files",
+							"host": [
+								"{{microservices-core-multitetant-host}}"
+							],
+							"path": [
+								"configurations",
+								"v1",
+								"components",
+								"815d4976-42a4-4aa7-8ec3-bd3ccc4d5456",
+								"tenants",
+								"mx-yastas",
+								"configurations",
+								"files"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Core Multitenant Cache",
+			"item": [
+				{
+					"name": "Delete Tenant Cache Configuration",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{microservices-component-host}}:{{orchestrator-microservice-port}}/switching/v1.0/transactions/orchestration/cache",
+							"host": [
+								"{{microservices-component-host}}"
+							],
+							"port": "{{orchestrator-microservice-port}}",
+							"path": [
+								"switching",
+								"v1.0",
+								"transactions",
+								"orchestration",
+								"cache"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pod Health",
+			"item": [
+				{
+					"name": "Get Pod Info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Tenant-Id",
+								"value": "4dd4abf1-f6fc-4a48-8280-25fdc971b970"
+							},
+							{
+								"key": "X-Request-Id",
+								"value": "e30b625a-e085-42a5-aac2-3d52f73ad8fe"
+							},
+							{
+								"key": "Cookie",
+								"value": "JSESSIONID=82112745BF893834E8C2D06163FDB699"
+							}
+						],
+						"url": {
+							"raw": "{{microservices-component-host}}:{{orchestrator-microservice-port}}/switching/v1.0/transactions/orchestration/podInfo",
+							"host": [
+								"{{microservices-component-host}}"
+							],
+							"port": "{{orchestrator-microservice-port}}",
+							"path": [
+								"switching",
+								"v1.0",
+								"transactions",
+								"orchestration",
+								"podInfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Actuator Health",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Tenant-Id",
+								"value": "4dd4abf1-f6fc-4a48-8280-25fdc971b970"
+							},
+							{
+								"key": "X-Request-Id",
+								"value": "e30b625a-e085-42a5-aac2-3d52f73ad8fe"
+							},
+							{
+								"key": "Cookie",
+								"value": "JSESSIONID=82112745BF893834E8C2D06163FDB699"
+							}
+						],
+						"url": {
+							"raw": "{{microservices-component-host}}/switching/v1.0/transactions/orchestration/actuator/health",
+							"host": [
+								"{{microservices-component-host}}"
+							],
+							"path": [
+								"switching",
+								"v1.0",
+								"transactions",
+								"orchestration",
+								"actuator",
+								"health"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transactions Requests Sprint # 1",
+			"item": [
+				{
+					"name": "Cash Deposit Transaction (DepósitoEfectivo)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Tenant-Id",
+								"value": "mx-yastas"
+							},
+							{
+								"key": "X-Request-Id",
+								"value": "146abdee-7ecd-4e87-9b32-51ffa0cc5143"
+							},
+							{
+								"key": "Cookie",
+								"value": "JSESSIONID=82112745BF893834E8C2D06163FDB699"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"paymentHeader\": {\r\n        \"messageType\": \"P\",\r\n        \"trackingId\": \"1702202216453613000452637\",\r\n        \"bankCode\": \"0066\",\r\n        \"serviceId\": \"00660022\",\r\n        \"storeId\": \"\",\r\n        \"userId\": \"\",\r\n        \"externalBranchId\": \"\",\r\n        \"externalUserId\": \"\",\r\n        \"channelId\": \"\",\r\n        \"deviceId\": \"\",\r\n        \"extraDeviceInformation\": \"\",\r\n        \"ipAddress\": \"\"\r\n    },\r\n    \"transaction\": {\r\n        \"messageTypeIndicator\": \"0200\",\r\n        \"de2\": \"4141411515151515\",\r\n        \"de3\": \"210000\",\r\n        \"de4\": \"000000000200\",\r\n        \"de7\": \"0314120000\",\r\n        \"de11\": \"123456\",\r\n        \"de12\": \"101520\",\r\n        \"de13\": \"1210\",\r\n        \"de17\": \"1205\",\r\n        \"de18\": \"9999\",\r\n        \"de22\": \"051\",\r\n        \"de32\": \"25252522552\",\r\n        \"de35\": \"4141411515151515=231120111523600000\",\r\n        \"de37\": \"101520101520\",\r\n        \"de38\": \"123456\",\r\n        \"de39\": \"R9\",\r\n        \"de41\": \"12345678\",\r\n        \"de42\": \"123456781234567\",\r\n        \"de43\": \"LOS JORGES CUAUHTEMOC DI MX\",\r\n        \"de44\": \"300000000000000000000000000000000000\",\r\n        \"de46\": \"123456\",\r\n        \"de48\": \"123456\",\r\n        \"de49\": \"484\",        \r\n        \"de55\": \"0123456789ABCDEF\",\r\n        \"de60\": \"YASTYAST+0000000\",\r\n        \"de61\": \"YASTYAST+0000000\",\r\n        \"de62\": \"YASTYAST+0000000\",\r\n        \"de63\": \" 0000200042! B400020 9015110000000015080 \",\r\n        \"de90\": \"02001234567891230000000000000000\",\r\n        \"de100\": \"11010100100\",\r\n        \"de120\": \"152535\",\r\n        \"de121\": \"152535\",\r\n        \"de125\": \"152535\",\r\n        \"de126\": \"601548\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{microservices-component-host}}:{{orchestrator-microservice-port}}/switching/v1.0/transactions/orchestration/transactions",
+							"host": [
+								"{{microservices-component-host}}"
+							],
+							"port": "{{orchestrator-microservice-port}}",
+							"path": [
+								"switching",
+								"v1.0",
+								"transactions",
+								"orchestration",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Info Transaction (ConsultaDatosCliente)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Tenant-Id",
+								"value": "mx-yastas"
+							},
+							{
+								"key": "X-Request-Id",
+								"value": "146abdee-7ecd-4e87-9b32-51ffa0cc5143"
+							},
+							{
+								"key": "Cookie",
+								"value": "JSESSIONID=82112745BF893834E8C2D06163FDB699"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"paymentHeader\": {\r\n        \"messageType\": \"P\",\r\n        \"trackingId\": \"1702202216453613000452637\",\r\n        \"bankCode\": \"0066\",\r\n        \"serviceId\": \"00660035\",\r\n        \"storeId\": \"\",\r\n        \"userId\": \"\",\r\n        \"externalBranchId\": \"\",\r\n        \"externalUserId\": \"\",\r\n        \"channelId\": \"\",\r\n        \"deviceId\": \"\",\r\n        \"extraDeviceInformation\": \"\",\r\n        \"ipAddress\": \"\"\r\n    },\r\n    \"transaction\": {\r\n        \"messageTypeIndicator\": \"0200\",\r\n        \"de2\": \"4141411515151515\",\r\n        \"de3\": \"380000\",\r\n        \"de4\": \"000000000200\",\r\n        \"de7\": \"0314120000\",\r\n        \"de11\": \"123456\",\r\n        \"de12\": \"101520\",\r\n        \"de13\": \"1210\",\r\n        \"de17\": \"1205\",\r\n        \"de18\": \"9999\",\r\n        \"de22\": \"051\",\r\n        \"de32\": \"25252522552\",\r\n        \"de35\": \"4141411515151515=231120111523600000\",\r\n        \"de37\": \"101520101520\",\r\n        \"de38\": \"123456\",\r\n        \"de39\": \"R9\",\r\n        \"de41\": \"12345678\",\r\n        \"de42\": \"123456781234567\",\r\n        \"de43\": \"LOS JORGES CUAUHTEMOC DI MX\",\r\n        \"de44\": \"300000000000000000000000000000000000\",\r\n        \"de46\": \"123456\",\r\n        \"de48\": \"123456\",\r\n        \"de49\": \"484\",        \r\n        \"de55\": \"0123456789ABCDEF\",\r\n        \"de60\": \"YASTYAST+0000000\",\r\n        \"de61\": \"YASTYAST+0000000\",\r\n        \"de62\": \"YASTYAST+0000000\",\r\n        \"de63\": \" 0000200042! B400020 9015110000000015080 \",\r\n        \"de90\": \"02001234567891230000000000000000\",\r\n        \"de100\": \"11010100100\",\r\n        \"de120\": \"152535\",\r\n        \"de121\": \"152535\",\r\n        \"de125\": \"152535\",\r\n        \"de126\": \"601548\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{microservices-component-host}}:{{orchestrator-microservice-port}}/switching/v1.0/transactions/orchestration/transactions",
+							"host": [
+								"{{microservices-component-host}}"
+							],
+							"port": "{{orchestrator-microservice-port}}",
+							"path": [
+								"switching",
+								"v1.0",
+								"transactions",
+								"orchestration",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Commission Query Transaction (ConsultarComisionDeposito)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Tenant-Id",
+								"value": "mx-yastas"
+							},
+							{
+								"key": "X-Request-Id",
+								"value": "146abdee-7ecd-4e87-9b32-51ffa0cc5143"
+							},
+							{
+								"key": "Cookie",
+								"value": "JSESSIONID=82112745BF893834E8C2D06163FDB699"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"paymentHeader\": {\r\n        \"messageType\": \"P\",\r\n        \"trackingId\": \"1702202216453613000452637\",\r\n        \"bankCode\": \"0066\",\r\n        \"serviceId\": \"00660037\",\r\n        \"storeId\": \"\",\r\n        \"userId\": \"\",\r\n        \"externalBranchId\": \"\",\r\n        \"externalUserId\": \"\",\r\n        \"channelId\": \"\",\r\n        \"deviceId\": \"\",\r\n        \"extraDeviceInformation\": \"\",\r\n        \"ipAddress\": \"\"\r\n    },\r\n    \"transaction\": {\r\n        \"messageTypeIndicator\": \"0200\",\r\n        \"de2\": \"4141411515151515\",\r\n        \"de3\": \"330000\",\r\n        \"de4\": \"000000000200\",\r\n        \"de7\": \"0314120000\",\r\n        \"de11\": \"123456\",\r\n        \"de12\": \"101520\",\r\n        \"de13\": \"1210\",\r\n        \"de17\": \"1205\",\r\n        \"de18\": \"9999\",\r\n        \"de22\": \"051\",\r\n        \"de32\": \"25252522552\",\r\n        \"de35\": \"4141411515151515=231120111523600000\",\r\n        \"de37\": \"101520101520\",\r\n        \"de38\": \"123456\",\r\n        \"de39\": \"R9\",\r\n        \"de41\": \"12345678\",\r\n        \"de42\": \"123456781234567\",\r\n        \"de43\": \"LOS JORGES CUAUHTEMOC DI MX\",\r\n        \"de44\": \"300000000000000000000000000000000000\",\r\n        \"de46\": \"123456\",\r\n        \"de48\": \"123456\",\r\n        \"de49\": \"484\",        \r\n        \"de55\": \"0123456789ABCDEF\",\r\n        \"de60\": \"YASTYAST+0000000\",\r\n        \"de61\": \"YASTYAST+0000000\",\r\n        \"de62\": \"YASTYAST+0000000\",\r\n        \"de63\": \" 0000200042! B400020 9015110000000015080 \",\r\n        \"de90\": \"02001234567891230000000000000000\",\r\n        \"de100\": \"11010100100\",\r\n        \"de120\": \"152535\",\r\n        \"de121\": \"152535\",\r\n        \"de125\": \"152535\",\r\n        \"de126\": \"601548\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{microservices-component-host}}:{{orchestrator-microservice-port}}/switching/v1.0/transactions/orchestration/transactions",
+							"host": [
+								"{{microservices-component-host}}"
+							],
+							"port": "{{orchestrator-microservice-port}}",
+							"path": [
+								"switching",
+								"v1.0",
+								"transactions",
+								"orchestration",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reverso Cash Deposit Transaction (ReversoDepositoEfectivo)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Tenant-Id",
+								"value": "mx-yastas"
+							},
+							{
+								"key": "X-Request-Id",
+								"value": "146abdee-7ecd-4e87-9b32-51ffa0cc5143"
+							},
+							{
+								"key": "Cookie",
+								"value": "JSESSIONID=82112745BF893834E8C2D06163FDB699"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"paymentHeader\": {\r\n        \"messageType\": \"P\",\r\n        \"trackingId\": \"1702202216453613000452637\",\r\n        \"bankCode\": \"0066\",\r\n        \"serviceId\": \"00660022\",\r\n        \"storeId\": \"\",\r\n        \"userId\": \"\",\r\n        \"externalBranchId\": \"\",\r\n        \"externalUserId\": \"\",\r\n        \"channelId\": \"\",\r\n        \"deviceId\": \"\",\r\n        \"extraDeviceInformation\": \"\",\r\n        \"ipAddress\": \"\"\r\n    },\r\n    \"transaction\": {\r\n        \"messageTypeIndicator\": \"0420\",\r\n        \"de2\": \"4141411515151515\",\r\n        \"de3\": \"210000\",\r\n        \"de4\": \"000000000200\",\r\n        \"de7\": \"0314120000\",\r\n        \"de11\": \"123456\",\r\n        \"de12\": \"101520\",\r\n        \"de13\": \"1210\",\r\n        \"de17\": \"1205\",\r\n        \"de18\": \"9999\",\r\n        \"de22\": \"051\",\r\n        \"de32\": \"25252522552\",\r\n        \"de35\": \"4141411515151515=231120111523600000\",\r\n        \"de37\": \"101520101520\",\r\n        \"de38\": \"123456\",\r\n        \"de39\": \"R9\",\r\n        \"de41\": \"12345678\",\r\n        \"de42\": \"123456781234567\",\r\n        \"de43\": \"LOS JORGES CUAUHTEMOC DI MX\",\r\n        \"de44\": \"300000000000000000000000000000000000\",\r\n        \"de46\": \"123456\",\r\n        \"de48\": \"123456\",\r\n        \"de49\": \"484\",        \r\n        \"de55\": \"0123456789ABCDEF\",\r\n        \"de60\": \"YASTYAST+0000000\",\r\n        \"de61\": \"YASTYAST+0000000\",\r\n        \"de62\": \"YASTYAST+0000000\",\r\n        \"de63\": \" 0000200042! B400020 9015110000000015080 \",\r\n        \"de90\": \"02001234567891230000000000000000\",\r\n        \"de100\": \"11010100100\",\r\n        \"de120\": \"152535\",\r\n        \"de121\": \"152535\",\r\n        \"de125\": \"152535\",\r\n        \"de126\": \"601548\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{microservices-component-host}}:{{orchestrator-microservice-port}}/switching/v1.0/transactions/orchestration/transactions",
+							"host": [
+								"{{microservices-component-host}}"
+							],
+							"port": "{{orchestrator-microservice-port}}",
+							"path": [
+								"switching",
+								"v1.0",
+								"transactions",
+								"orchestration",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transactions Requests Sprint # 2",
+			"item": []
+		},
+		{
+			"name": "Transactions Requests Sprint # 3",
+			"item": [
+				{
+					"name": "Init Deposit Transaction (DepositoInicial)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Tenant-Id",
+								"value": "mx-yastas"
+							},
+							{
+								"key": "X-Request-Id",
+								"value": "146abdee-7ecd-4e87-9b32-51ffa0cc5143"
+							},
+							{
+								"key": "Cookie",
+								"value": "JSESSIONID=82112745BF893834E8C2D06163FDB699"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"paymentHeader\": {\r\n        \"messageType\": \"P\",\r\n        \"trackingId\": \"1702202216453613000452637\",\r\n        \"bankCode\": \"0066\",\r\n        \"serviceId\": \"00660019\",\r\n        \"storeId\": \"\",\r\n        \"userId\": \"\",\r\n        \"externalBranchId\": \"\",\r\n        \"externalUserId\": \"\",\r\n        \"channelId\": \"\",\r\n        \"deviceId\": \"\",\r\n        \"extraDeviceInformation\": \"\",\r\n        \"ipAddress\": \"\"\r\n    },\r\n    \"transaction\": {\r\n        \"messageTypeIndicator\": \"0200\",\r\n        \"de2\": \"4141411515151515\",\r\n        \"de3\": \"250000\",\r\n        \"de4\": \"000000000200\",\r\n        \"de7\": \"0314120000\",\r\n        \"de11\": \"123456\",\r\n        \"de12\": \"101520\",\r\n        \"de13\": \"1210\",\r\n        \"de17\": \"1205\",\r\n        \"de18\": \"9999\",\r\n        \"de22\": \"051\",\r\n        \"de32\": \"25252522552\",\r\n        \"de35\": \"4141411515151515=231120111523600000\",\r\n        \"de37\": \"101520101520\",\r\n        \"de38\": \"123456\",\r\n        \"de39\": \"R9\",\r\n        \"de41\": \"12345678\",\r\n        \"de42\": \"123456781234567\",\r\n        \"de43\": \"LOS JORGES CUAUHTEMOC DI MX\",\r\n        \"de44\": \"300000000000000000000000000000000000\",\r\n        \"de46\": \"123456\",\r\n        \"de48\": \"123456\",\r\n        \"de49\": \"484\",        \r\n        \"de55\": \"0123456789ABCDEF\",\r\n        \"de60\": \"YASTYAST+0000000\",\r\n        \"de61\": \"YASTYAST+0000000\",\r\n        \"de62\": \"YASTYAST+0000000\",\r\n        \"de63\": \" 0000200042! B400020 9015110000000015080 \",\r\n        \"de90\": \"02001234567891230000000000000000\",\r\n        \"de100\": \"11010100100\",\r\n        \"de120\": \"152535\",\r\n        \"de121\": \"152535\",\r\n        \"de125\": \"152535\",\r\n        \"de126\": \"601548\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{microservices-component-host}}:{{orchestrator-microservice-port}}/switching/v1.0/transactions/orchestration/transactions",
+							"host": [
+								"{{microservices-component-host}}"
+							],
+							"port": "{{orchestrator-microservice-port}}",
+							"path": [
+								"switching",
+								"v1.0",
+								"transactions",
+								"orchestration",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reverse Init Deposit Transaction (DepósitoEfectivo)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Tenant-Id",
+								"value": "mx-yastas"
+							},
+							{
+								"key": "X-Request-Id",
+								"value": "146abdee-7ecd-4e87-9b32-51ffa0cc5143"
+							},
+							{
+								"key": "Cookie",
+								"value": "JSESSIONID=82112745BF893834E8C2D06163FDB699"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"paymentHeader\": {\r\n        \"messageType\": \"P\",\r\n        \"trackingId\": \"1702202216453613000452637\",\r\n        \"bankCode\": \"0066\",\r\n        \"serviceId\": \"00660019\",\r\n        \"storeId\": \"\",\r\n        \"userId\": \"\",\r\n        \"externalBranchId\": \"\",\r\n        \"externalUserId\": \"\",\r\n        \"channelId\": \"\",\r\n        \"deviceId\": \"\",\r\n        \"extraDeviceInformation\": \"\",\r\n        \"ipAddress\": \"\"\r\n    },\r\n    \"transaction\": {\r\n        \"messageTypeIndicator\": \"0420\",\r\n        \"de2\": \"4141411515151515\",\r\n        \"de3\": \"250000\",\r\n        \"de4\": \"000000000200\",\r\n        \"de7\": \"0314120000\",\r\n        \"de11\": \"123456\",\r\n        \"de12\": \"101520\",\r\n        \"de13\": \"1210\",\r\n        \"de17\": \"1205\",\r\n        \"de18\": \"9999\",\r\n        \"de22\": \"051\",\r\n        \"de32\": \"25252522552\",\r\n        \"de35\": \"4141411515151515=231120111523600000\",\r\n        \"de37\": \"101520101520\",\r\n        \"de38\": \"123456\",\r\n        \"de39\": \"R9\",\r\n        \"de41\": \"12345678\",\r\n        \"de42\": \"123456781234567\",\r\n        \"de43\": \"LOS JORGES CUAUHTEMOC DI MX\",\r\n        \"de44\": \"300000000000000000000000000000000000\",\r\n        \"de46\": \"123456\",\r\n        \"de48\": \"123456\",\r\n        \"de49\": \"484\",        \r\n        \"de55\": \"0123456789ABCDEF\",\r\n        \"de60\": \"YASTYAST+0000000\",\r\n        \"de61\": \"YASTYAST+0000000\",\r\n        \"de62\": \"YASTYAST+0000000\",\r\n        \"de63\": \" 0000200042! B400020 9015110000000015080 \",\r\n        \"de90\": \"02001234567891230000000000000000\",\r\n        \"de100\": \"11010100100\",\r\n        \"de120\": \"152535\",\r\n        \"de121\": \"152535\",\r\n        \"de125\": \"152535\",\r\n        \"de126\": \"601548\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{microservices-component-host}}:{{orchestrator-microservice-port}}/switching/v1.0/transactions/orchestration/transactions",
+							"host": [
+								"{{microservices-component-host}}"
+							],
+							"port": "{{orchestrator-microservice-port}}",
+							"path": [
+								"switching",
+								"v1.0",
+								"transactions",
+								"orchestration",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Card Replacement (ReposicionTarjeta)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Tenant-Id",
+								"value": "mx-yastas"
+							},
+							{
+								"key": "X-Request-Id",
+								"value": "146abdee-7ecd-4e87-9b32-51ffa0cc5143"
+							},
+							{
+								"key": "Cookie",
+								"value": "JSESSIONID=82112745BF893834E8C2D06163FDB699"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"paymentHeader\": {\r\n        \"messageType\": \"P\",\r\n        \"trackingId\": \"1702202216453613000452637\",\r\n        \"bankCode\": \"0066\",\r\n        \"serviceId\": \"00660020\",\r\n        \"storeId\": \"\",\r\n        \"userId\": \"\",\r\n        \"externalBranchId\": \"\",\r\n        \"externalUserId\": \"\",\r\n        \"channelId\": \"\",\r\n        \"deviceId\": \"\",\r\n        \"extraDeviceInformation\": \"\",\r\n        \"ipAddress\": \"\"\r\n    },\r\n    \"transaction\": {\r\n        \"messageTypeIndicator\": \"0200\",\r\n        \"de2\": \"4141411515151515\",\r\n        \"de3\": \"230000\",\r\n        \"de4\": \"000000000200\",\r\n        \"de7\": \"0314120000\",\r\n        \"de11\": \"123456\",\r\n        \"de12\": \"101520\",\r\n        \"de13\": \"1210\",\r\n        \"de17\": \"1205\",\r\n        \"de18\": \"9999\",\r\n        \"de22\": \"051\",\r\n        \"de32\": \"25252522552\",\r\n        \"de35\": \"4141411515151515=231120111523600000\",\r\n        \"de37\": \"101520101520\",\r\n        \"de38\": \"123456\",\r\n        \"de39\": \"R9\",\r\n        \"de41\": \"12345678\",\r\n        \"de42\": \"123456781234567\",\r\n        \"de43\": \"LOS JORGES CUAUHTEMOC DI MX\",\r\n        \"de44\": \"300000000000000000000000000000000000\",\r\n        \"de46\": \"123456\",\r\n        \"de48\": \"123456\",\r\n        \"de49\": \"484\",        \r\n        \"de55\": \"0123456789ABCDEF\",\r\n        \"de60\": \"YASTYAST+0000000\",\r\n        \"de61\": \"YASTYAST+0000000\",\r\n        \"de62\": \"YASTYAST+0000000\",\r\n        \"de63\": \" 0000200042! B400020 9015110000000015080 \",\r\n        \"de90\": \"02001234567891230000000000000000\",\r\n        \"de100\": \"11010100100\",\r\n        \"de120\": \"152535\",\r\n        \"de121\": \"152535\",\r\n        \"de125\": \"152535\",\r\n        \"de126\": \"601548\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{microservices-component-host}}:{{orchestrator-microservice-port}}/switching/v1.0/transactions/orchestration/transactions",
+							"host": [
+								"{{microservices-component-host}}"
+							],
+							"port": "{{orchestrator-microservice-port}}",
+							"path": [
+								"switching",
+								"v1.0",
+								"transactions",
+								"orchestration",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reverse Card Replacement (ReversoReposicionTarjeta)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Tenant-Id",
+								"value": "mx-yastas"
+							},
+							{
+								"key": "X-Request-Id",
+								"value": "146abdee-7ecd-4e87-9b32-51ffa0cc5143"
+							},
+							{
+								"key": "Cookie",
+								"value": "JSESSIONID=82112745BF893834E8C2D06163FDB699"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"paymentHeader\": {\r\n        \"messageType\": \"P\",\r\n        \"trackingId\": \"1702202216453613000452637\",\r\n        \"bankCode\": \"0066\",\r\n        \"serviceId\": \"00660020\",\r\n        \"storeId\": \"\",\r\n        \"userId\": \"\",\r\n        \"externalBranchId\": \"\",\r\n        \"externalUserId\": \"\",\r\n        \"channelId\": \"\",\r\n        \"deviceId\": \"\",\r\n        \"extraDeviceInformation\": \"\",\r\n        \"ipAddress\": \"\"\r\n    },\r\n    \"transaction\": {\r\n        \"messageTypeIndicator\": \"0420\",\r\n        \"de2\": \"4141411515151515\",\r\n        \"de3\": \"230000\",\r\n        \"de4\": \"000000000200\",\r\n        \"de7\": \"0314120000\",\r\n        \"de11\": \"123456\",\r\n        \"de12\": \"101520\",\r\n        \"de13\": \"1210\",\r\n        \"de17\": \"1205\",\r\n        \"de18\": \"9999\",\r\n        \"de22\": \"051\",\r\n        \"de32\": \"25252522552\",\r\n        \"de35\": \"4141411515151515=231120111523600000\",\r\n        \"de37\": \"101520101520\",\r\n        \"de38\": \"123456\",\r\n        \"de39\": \"R9\",\r\n        \"de41\": \"12345678\",\r\n        \"de42\": \"123456781234567\",\r\n        \"de43\": \"LOS JORGES CUAUHTEMOC DI MX\",\r\n        \"de44\": \"300000000000000000000000000000000000\",\r\n        \"de46\": \"123456\",\r\n        \"de48\": \"123456\",\r\n        \"de49\": \"484\",        \r\n        \"de55\": \"0123456789ABCDEF\",\r\n        \"de60\": \"YASTYAST+0000000\",\r\n        \"de61\": \"YASTYAST+0000000\",\r\n        \"de62\": \"YASTYAST+0000000\",\r\n        \"de63\": \" 0000200042! B400020 9015110000000015080 \",\r\n        \"de90\": \"02001234567891230000000000000000\",\r\n        \"de100\": \"11010100100\",\r\n        \"de120\": \"152535\",\r\n        \"de121\": \"152535\",\r\n        \"de125\": \"152535\",\r\n        \"de126\": \"601548\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{microservices-component-host}}:{{orchestrator-microservice-port}}/switching/v1.0/transactions/orchestration/transactions",
+							"host": [
+								"{{microservices-component-host}}"
+							],
+							"port": "{{orchestrator-microservice-port}}",
+							"path": [
+								"switching",
+								"v1.0",
+								"transactions",
+								"orchestration",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transactions Requests Sprint # 4",
+			"item": [
+				{
+					"name": "HSM Generate Key Transaction",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Tenant-Id",
+								"value": "mx-yastas"
+							},
+							{
+								"key": "X-Request-Id",
+								"value": "146abdee-7ecd-4e87-9b32-51ffa0cc5143"
+							},
+							{
+								"key": "Cookie",
+								"value": "JSESSIONID=82112745BF893834E8C2D06163FDB699"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"trackingId\": \"170220221645361300045263756372\",\r\n    \"serialNumber\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{microservices-component-host}}:{{orchestrator-microservice-port}}/switching/v1.0/transactions/orchestration/keys/ipek",
+							"host": [
+								"{{microservices-component-host}}"
+							],
+							"port": "{{orchestrator-microservice-port}}",
+							"path": [
+								"switching",
+								"v1.0",
+								"transactions",
+								"orchestration",
+								"keys",
+								"ipek"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

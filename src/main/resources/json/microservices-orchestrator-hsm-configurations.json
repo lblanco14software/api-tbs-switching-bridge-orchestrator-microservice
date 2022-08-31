@@ -1,0 +1,19 @@
+[
+  {
+    "header": "0000",
+    "command": "A0",
+    "body": {
+      "mode": "B",
+      "keyType": "302",
+      "schema": "U",
+      "deriveKeyMode": "0",
+      "dukptType": "1",
+      "bdk": "U8F11B2BF7DE9E29BCC2E92CB97DEF2FE",
+      "ksn": "FFFFF5012342468",
+      "delimiterEncryptionKey": ";",
+      "encryptionKeyType": "0",
+      "encryptionKey": "UCBB2E43023C3690985AE9538E823E4DF",
+      "encryptionKeySchema": "X"
+    }
+  }
+]

@@ -1,0 +1,266 @@
+[
+  {
+    "structureDataFields": [
+      {
+        "key": "serviceId",
+        "fieldType": "REFERENCE",
+        "value": "paymentHeader.serviceId"
+      },
+      {
+        "key": "messageType",
+        "fieldType": "REFERENCE",
+        "value": "paymentHeader.messageType"
+      },
+      {
+        "key": "trackingId",
+        "fieldType": "REFERENCE",
+        "value": "paymentHeader.trackingId"
+      },
+      {
+        "key": "bankCode",
+        "fieldType": "REFERENCE",
+        "value": "paymentHeader.bankCode"
+      },
+      {
+        "key": "storeId",
+        "fieldType": "REFERENCE",
+        "value": "paymentHeader.storeId"
+      },
+      {
+        "key": "userId",
+        "fieldType": "REFERENCE",
+        "value": "paymentHeader.userId"
+      },
+      {
+        "key": "externalBranchId",
+        "fieldType": "REFERENCE",
+        "value": "paymentHeader.externalBranchId"
+      },
+      {
+        "key": "externalUserId",
+        "fieldType": "REFERENCE",
+        "value": "paymentHeader.externalUserId"
+      },
+      {
+        "key": "channelId",
+        "fieldType": "REFERENCE",
+        "value": "paymentHeader.channelId"
+      },
+      {
+        "key": "deviceId",
+        "fieldType": "REFERENCE",
+        "value": "paymentHeader.deviceId"
+      },
+      {
+        "key": "extraDeviceInformation",
+        "fieldType": "REFERENCE",
+        "value": "paymentHeader.extraDeviceInformation"
+      },
+      {
+        "key": "ipAddress",
+        "fieldType": "REFERENCE",
+        "value": "paymentHeader.ipAddress"
+      },
+      {
+        "key": "B24_F17",
+        "fieldType": "REFERENCE",
+        "value": "transaction.de17"
+      },
+      {
+        "key": "B24_F41",
+        "fieldType": "REFERENCE",
+        "value": "transaction.de41"
+      },
+      {
+        "key": "B24_F48",
+        "fieldType": "REFERENCE",
+        "value": "transaction.de48"
+      },
+      {
+        "key": "B24_F49",
+        "fieldType": "REFERENCE",
+        "value": "transaction.de49"
+      },
+      {
+        "key": "B24_F60",
+        "fieldType": "REFERENCE",
+        "value": "transaction.de60"
+      },
+      {
+        "key": "B24_F61",
+        "fieldType": "REFERENCE",
+        "value": "transaction.de61"
+      },
+      {
+        "key": "B24_F62",
+        "fieldType": "REFERENCE",
+        "value": "transaction.de62"
+      },
+      {
+        "key": "B24_F63",
+        "fieldType": "REFERENCE",
+        "value": "transaction.de63"
+      },
+      {
+        "key": "B24_F100",
+        "fieldType": "REFERENCE",
+        "value": "transaction.de100"
+      },
+      {
+        "key": "B24_F120",
+        "fieldType": "REFERENCE",
+        "value": "transaction.de120"
+      },
+      {
+        "key": "B24_F121",
+        "fieldType": "REFERENCE",
+        "value": "transaction.de121"
+      },
+      {
+        "key": "B24_F125",
+        "fieldType": "REFERENCE",
+        "value": "transaction.de125"
+      },
+      {
+        "key": "B24_F126",
+        "fieldType": "REFERENCE",
+        "value": "transaction.de126"
+      }
+    ]
+  },
+  {
+    "transactionCode": "orchestrator.change.ping.transaction",
+    "serviceId": "00660018",
+    "messageTypeIndicator": "0200",
+    "processingCode": "960000",
+    "transactionStateCode": "CHANGE_PING_TRANSACTION",
+    "transactionReferenceCode": "CambioNIP",
+    "structureDataFields": [
+      {
+        "key": "B24_F3",
+        "fieldType": "REFERENCE",
+        "value": "transaction.de3"
+      }
+    ]
+  },
+  {
+    "transactionCode": "orchestrator.commission.balance.query.transaction",
+    "serviceId": "00660035",
+    "messageTypeIndicator": "0200",
+    "processingCode": "210049",
+    "transactionStateCode": "COMMISSION_BALANCE_QUERY_TRANSACTION",
+    "transactionReferenceCode": "ConsultaComisionSaldo",
+    "structureDataFields": [
+      {
+        "key": "B24_F3",
+        "fieldType": "REFERENCE",
+        "value": "transaction.de3"
+      }
+    ]
+  },
+  {
+    "transactionCode": "orchestrator.commission.query.transaction",
+    "serviceId": "00660037",
+    "messageTypeIndicator": "0200",
+    "processingCode": "330000",
+    "transactionStateCode": "COMMISSION_QUERY_TRANSACTION",
+    "transactionReferenceCode": "ConsultarComisionDeposito",
+    "structureDataFields": [
+      {
+        "key": "B24_F3",
+        "fieldType": "REFERENCE",
+        "value": "transaction.de3"
+      }
+    ]
+  },
+  {
+    "transactionCode": "orchestrator.commission.replace.card.query.transaction",
+    "serviceId": "00660039",
+    "messageTypeIndicator": "0200",
+    "processingCode": "340000",
+    "transactionStateCode": "COMMISSION_REPLACE_CARD_QUERY_TRANSACTION",
+    "transactionReferenceCode": "ConsultaComisionReposicionTarjeta",
+    "structureDataFields": [
+      {
+        "key": "B24_F3",
+        "fieldType": "REFERENCE",
+        "value": "transaction.de3"
+      }
+    ]
+  },
+  {
+    "transactionCode": "orchestrator.commission.withdrawal.query.transaction",
+    "serviceId": "00660036",
+    "messageTypeIndicator": "0200",
+    "processingCode": "320000",
+    "transactionStateCode": "COMMISSION_WITHDRAWAL_QUERY_TRANSACTION",
+    "transactionReferenceCode": "ConsultaComisionRetiro",
+    "structureDataFields": [
+      {
+        "key": "B24_F3",
+        "fieldType": "REFERENCE",
+        "value": "transaction.de3"
+      }
+    ]
+  },
+  {
+    "transactionCode": "orchestrator.customer.info.transaction",
+    "serviceId": "00660035",
+    "messageTypeIndicator": "0200",
+    "processingCode": "380000",
+    "transactionStateCode": "CUSTOMER_INFO_TRANSACTION",
+    "transactionReferenceCode": "ConsultaDatosCliente",
+    "structureDataFields": [
+      {
+        "key": "B24_F3",
+        "fieldType": "REFERENCE",
+        "value": "transaction.de3"
+      }
+    ]
+  },
+  {
+    "transactionCode": "orchestrator.mobile.cash.withdraw.transaction",
+    "serviceId": "00660023",
+    "messageTypeIndicator": "0200",
+    "processingCode": "170000",
+    "transactionStateCode": "WITHDRAW_MOBILE_MONEY_TRANSACTION",
+    "transactionReferenceCode": "DineroMovil",
+    "structureDataFields": [
+      {
+        "key": "B24_F3",
+        "fieldType": "REFERENCE",
+        "value": "transaction.de3"
+      }
+    ]
+  },
+  {
+    "transactionCode": "orchestrator.replace.card.transaction",
+    "serviceId": "00660020",
+    "messageTypeIndicator": "0200",
+    "processingCode": "230000",
+    "transactionStateCode": "REPLACE_CARD_TRANSACTION",
+    "transactionReferenceCode": "ReposicionTarjeta",
+    "structureDataFields": [
+      {
+        "key": "B24_F3",
+        "fieldType": "REFERENCE",
+        "value": "transaction.de3"
+      }
+    ]
+  },
+  {
+    "transactionCode": "orchestrator.reverse.withdraw.mobile.money.transaction",
+    "serviceId": "00660023",
+    "messageTypeIndicator": "0420",
+    "processingCode": "170000",
+    "transactionStateCode": "REVERSE_WITHDRAW_MOBILE_MONEY_TRANSACTION",
+    "transactionReferenceCode": "ReversoDineroMovil",
+    "structureDataFields": [
+      {
+        "key": "B24_F3",
+        "fieldType": "REFERENCE",
+        "value": "transaction.de3"
+      }
+    ]
+  }
+]

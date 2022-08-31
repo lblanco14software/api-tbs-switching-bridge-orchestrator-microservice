@@ -1,0 +1,22 @@
+{
+  "ProjectSettings": {
+    "repositoryBranch": "develop"
+  },
+  "DockerSettings": {
+    "registryUrl": "docker.novopayment.net",
+    "imageName": "novopayment-tbs/api-tbs-switching-bridge-orchestrator-microservice"
+  },
+  "SonnarSettings": {
+    "serverUrl": "http://sonarqube.novopayment.net",
+    "projectKey": "api-tbs-switching-bridge-orchestrator-microservice",
+    "projectName": "api-tbs-switching-bridge-orchestrator-microservice"
+  },
+  "ApmSettings": {
+    "jarPath": "build/libs",
+    "jar": "api-tbs-switching-bridge-orchestrator-microservice-1.0.0.jar",
+    "serviceName": "api-tbs-switching-bridge-orchestrator-microservice",
+    "serverUrl": "https://dtu-apm.novopayment.net",
+    "prodServerUrl": "https://apm.novopayment.net",
+    "secretToken": " "
+  }
+}

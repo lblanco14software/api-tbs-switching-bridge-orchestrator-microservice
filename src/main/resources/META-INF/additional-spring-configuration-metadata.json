@@ -1,0 +1,49 @@
+{
+    "properties": [
+        {
+            "name": "spring.application.version",
+            "type": "java.lang.String",
+            "description": "A description for 'spring.application.version'"
+        },
+        {
+            "name": "spring.application.log",
+            "type": "java.lang.String",
+            "description": "A description for 'spring.application.log'"
+        },
+        {
+            "name": "spring.version",
+            "type": "java.lang.String",
+            "description": "A description for 'spring.version'"
+        },
+        {
+            "name": "entityUuid",
+            "type": "java.lang.String",
+            "description": "Component UuId in the multi tenant core"
+        },
+        {
+            "name": "configurationDomainPath",
+            "type": "java.lang.String",
+            "description": "Core multi tenant path, for example https://d-core-multitenant.novopayment.net"
+        },
+        {
+            "name": "configMap.message",
+            "type": "java.lang.String",
+            "description": "A description for 'configMap.message'"
+        },
+        {
+            "name": "hazelcastYmlPath",
+            "type": "java.lang.String",
+            "description": "Configuration path for Hazelcast, the core multi tenant loader configuration cache manager"
+        },
+        {
+            "name": "coreTenantConnectTimeout",
+            "type": "java.lang.String",
+            "description": "maximum waiting time for connection with the multi tenant core"
+        },
+        {
+            "name": "coreTenantReadTimeout",
+            "type": "java.lang.String",
+            "description": "maximum waiting time for the multitenant core information reading or serialization process"
+        }
+    ]
+}
